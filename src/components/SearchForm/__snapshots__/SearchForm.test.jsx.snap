@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm should match snapshot 1`] = `
+<div>
+  <input
+    data-testid="search-input"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    placeholder="What do you want to watch?"
+    title="What do you want to watch?"
+    type="text"
+    value="comedy"
+  />
+  <button
+    data-testid="search-button"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Search
+  </button>
+</div>
+`;
