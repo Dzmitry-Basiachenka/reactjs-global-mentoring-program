@@ -24,6 +24,7 @@ class GenreSelect extends React.Component {
               onClick={this.handleClick}>
             </input>
             <label
+              role='label'
               htmlFor={genre}>
               {genre}
             </label>

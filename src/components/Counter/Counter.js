@@ -15,9 +15,9 @@ class Counter extends React.Component {
 
   render() {
     return CounterContainer([
-      CounterButton('-', this.decrement),
+      CounterButton('-', 'counter-decrement', this.decrement),
       CounterText(this.state.value),
-      CounterButton('+', this.increment)
+      CounterButton('+', 'counter-increment', this.increment)
     ]);
   }
 
@@ -32,6 +32,7 @@ class Counter extends React.Component {
       ...prevState, value: prevState.value + 1
     }));
   }
+
 }
 
 export default Counter;

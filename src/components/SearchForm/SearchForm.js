@@ -17,6 +17,7 @@ class SearchForm extends React.Component {
     return <div>
       <input
         type='text'
+        data-testid='search-input'
         value={searchText}
         onChange={this.handleInputChange}
         onKeyDown={this.handleInputKeyDown}
@@ -26,6 +27,7 @@ class SearchForm extends React.Component {
 
       <button
         type='button'
+        data-testid='search-button'
         onClick={this.handleButtonClick}
         disabled={!searchText.length && 'disabled'}
       >
