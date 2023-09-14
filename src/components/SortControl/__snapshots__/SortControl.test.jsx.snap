@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortControl should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-3"
+    >
+      <form
+        className=""
+      >
+        <div
+          className="row"
+        >
+          <label
+            className="form-label col-form-label col-md-4"
+          >
+            Sort by
+          </label>
+          <div
+            className="col-md-8"
+          >
+            <select
+              className="form-select"
+              onChange={[Function]}
+              value="title"
+            >
+              <option
+                value="release_date"
+              >
+                Release date
+              </option>
+              <option
+                value="title"
+              >
+                Title
+              </option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
