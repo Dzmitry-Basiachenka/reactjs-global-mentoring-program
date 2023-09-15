@@ -28,3 +28,10 @@ export const MOCK_SORT_OPTIONS = [
     value: 'title'
   },
 ];
+
+export const MOCK_GENRES = [
+  'Crime',
+  'Documentary',
+  'Horror',
+  'Comedy'
+];

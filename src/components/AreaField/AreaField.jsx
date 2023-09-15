@@ -1,0 +1,31 @@
+import React from 'react';
+import { PropTypes } from 'prop-types';
+import { Field, ErrorMessage } from 'formik';
+import { Col } from 'react-bootstrap';
+
+const AreaField = ({
+    label,
+    name,
+    placeholder
+}) => {
+    return (
+        <Col>
+            <label className='form-label'>{label}</label>
+            <Field
+                as='textarea'
+                name={name}
+                placeholder={placeholder}
+                className='form-control'
+            />
+            <ErrorMessage name={name} component='div' />
+        </Col>
+    )
+}
+
+AreaField.propTypes = {
+    label: PropTypes.string,
+    name: PropTypes.string,
+    placeholder: PropTypes.string
+};
+
+export default AreaField;
