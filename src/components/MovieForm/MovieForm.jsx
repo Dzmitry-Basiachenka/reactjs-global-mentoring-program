@@ -7,6 +7,7 @@ import AreaField from '../AreaField/AreaField';
 import SelectField from '../SelectField/SelectField';
 import TextField from '../TextField/TextField';
 import { GENRES } from '../../constants/data.js';
+import { movieType } from '../../constants/types.js';
 
 const DEFAULT_VALUES = {
   'title': '',
@@ -115,16 +116,7 @@ const MovieForm = ({ movie, onSubmit }) => {
 }
 
 MovieForm.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    poster_path: PropTypes.string.isRequired,
-    vote_average: PropTypes.number.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-    runtime: PropTypes.number.isRequired,
-    overview: PropTypes.string.isRequired
-  }),
+  movie: movieType,
   onSubmit: PropTypes.func.isRequired
 };
 

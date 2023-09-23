@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import Dialog from '../Dialog/Dialog';
 import MovieForm from '../MovieForm/MovieForm';
+import { movieType } from '../../constants/types.js';
 
 const EditMovie = ({ movie, handleClose, handleSubmit }) => {
   const [visibleMovie, setVisibleMovie] = useState(null);
@@ -27,16 +28,7 @@ const EditMovie = ({ movie, handleClose, handleSubmit }) => {
 }
 
 EditMovie.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    poster_path: PropTypes.string.isRequired,
-    vote_average: PropTypes.number.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-    runtime: PropTypes.number.isRequired,
-    overview: PropTypes.string.isRequired
-  }).isRequired,
+  movie: movieType.isRequired,
   handleClose: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
 };

@@ -17,10 +17,21 @@ describe('SearchForm', () => {
     cy.get('button[data-testid=search-button]').click();
 
     cy.wait(2000);
+    cy.url().should('be.eq', 'http://localhost:3000/?search=eleven');
 
     cy.get('[data-testid=movie-counter]').contains('1 movie found').should('exist');
-
     cy.findAllByTestId('movie-tile').first().findByTestId('movie-tile-title').should('have.text', 'Ocean\'s Eleven');
+  });
+
+  it('navigates by route', () => {
+    cy.visit('/?search=twelve')
+    cy.wait(2000);
+
+    cy.get('input[data-testid=search-input]').should('have.value', 'twelve');
+
+    cy.get('[data-testid=movie-counter]').contains('2 movies found').should('exist');
+    cy.findAllByTestId('movie-tile').eq(0).findByTestId('movie-tile-title').should('have.text', 'Ocean\'s Twelve');
+    cy.findAllByTestId('movie-tile').eq(1).findByTestId('movie-tile-title').should('have.text', 'Twelve Monkeys');
   });
 
 });

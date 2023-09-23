@@ -1,29 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Col, Row, CloseButton } from 'react-bootstrap';
+import { Outlet, useSearchParams } from 'react-router-dom';
+import { Container, Col, Row } from 'react-bootstrap';
 
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
-import MovieDetails from '../MovieDetails/MovieDetails';
-import SearchForm from '../SearchForm/SearchForm';
 import GenreSelect from '../GenreSelect/GenreSelect';
 import SortControl from '../SortControl/SortControl';
 import MovieCounter from '../MovieCounter/MovieCounter';
 import MovieListPage from '../MovieListPage/MovieListPage';
 import { MovieService } from '../../services/MovieService';
-import { GENRES, SORT_OPTIONS, DEFAULT_SEARCH, DEFAULT_GENRES, DEFAULT_SORT } from '../../constants/data.js';
+import {
+  GENRES,
+  SORT_OPTIONS, DEFAULT_SEARCH, DEFAULT_GENRES, DEFAULT_SORT,
+  GENRES_QUERY_PARAM, SEARCH_QUERY_PARAM, SORT_QUERY_PARAM
+} from '../../constants/data.js';
 
 const Home = () => {
-  const [search, setSearch] = useState(DEFAULT_SEARCH);
-  const [genres, setGenres] = useState(DEFAULT_GENRES);
-  const [sort, setSort] = useState(DEFAULT_SORT);
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const updateSearchParams = (key, value) => {
+    setSearchParams(params => {
+      params.set(key, value);
+      return params;
+    });
+  }
+
+  const getFilter = () => {
+    return {
+      search: searchParams.get(SEARCH_QUERY_PARAM) || DEFAULT_SEARCH,
+      genres: searchParams.get(GENRES_QUERY_PARAM) || DEFAULT_GENRES,
+      sort: searchParams.get(SORT_QUERY_PARAM) || DEFAULT_SORT
+    }
+  }
+
+  const { search, genres, sort } = getFilter();
   const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [fetching, setFetching] = useState(false);
 
   useEffect(() => {
     setFetching(true);
 
-    MovieService.getMovies({ search, genres, sort },
+    MovieService.getMovies(getFilter(),
       (data) => {
         setMovies(data);
         setFetching(false);
@@ -39,22 +55,7 @@ const Home = () => {
   return (
     <ErrorBoundary fallback={<p>Something went wrong</p>}>
       <Container>
-        {!selectedMovie &&
-          <div>
-            <SearchForm
-              initialSearchText={search}
-              placeholderText='What do you want to watch?'
-              buttonText='Search'
-              handleSearch={setSearch}
-            />
-          </div>
-        }
-        {selectedMovie &&
-          <div>
-            <span data-testid='close-movie-details' className='float-end' onClick={() => setSelectedMovie(null)} ><CloseButton /></span>
-            <MovieDetails movie={selectedMovie} />
-          </div>
-        }
+        <Outlet />
       </Container>
       <Container>
         <Row>
@@ -62,14 +63,14 @@ const Home = () => {
             <GenreSelect
               genres={GENRES}
               selectedGenres={genres}
-              onSelect={setGenres}
+              onSelect={(value) => updateSearchParams(GENRES_QUERY_PARAM, value)}
             />
           </Col>
           <Col md={3}>
             <SortControl
               sortOptions={SORT_OPTIONS}
               defaultSort={sort}
-              handleChange={setSort}
+              handleChange={(value) => updateSearchParams(SORT_QUERY_PARAM, value)}
             />
           </Col>
         </Row>
@@ -77,7 +78,7 @@ const Home = () => {
       </Container>
       <div>
         {fetching && <span>Fetching movies...</span>}
-        {!fetching && <MovieListPage movies={movies} setSelectedMovie={setSelectedMovie} />}
+        {!fetching && <MovieListPage movies={movies} />}
       </div>
     </ErrorBoundary>
   );

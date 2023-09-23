@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import { getGenres, getYear, getRuntime } from '../../utils/utils.js';
+import { movieType } from '../../constants/types.js';
 import posterNotAvailable from '../../assets/images/poster-not-available.jpg';
 
 const MovieDetails = ({ movie }) => {
@@ -39,5 +40,9 @@ const MovieDetails = ({ movie }) => {
         </Container>
     )
 }
+
+MovieDetails.propTypes = {
+  movie: movieType.isRequired
+};
 
 export default MovieDetails;

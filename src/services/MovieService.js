@@ -23,5 +23,13 @@ export const MovieService = {
     } catch (error) {
       onError(error);
     }
+  },
+
+  getMovie: async (movieId) => {
+    const url = `${BACKEND_URL}/${movieId}`;
+
+    return await fetch(url)
+      .then(response => response.json());
   }
+
 }

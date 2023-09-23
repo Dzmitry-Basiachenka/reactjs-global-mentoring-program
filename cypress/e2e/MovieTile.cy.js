@@ -19,6 +19,7 @@ describe('MovieTile', () => {
     cy.get('button[data-testid=search-button]').click();
 
     cy.wait(2000);
+    cy.url().should('be.eq', 'http://localhost:3000/?search=eleven');
 
     cy.findAllByTestId('movie-tile').its('length').should('be.eq', 1);
 
@@ -29,6 +30,7 @@ describe('MovieTile', () => {
     cy.get('button[data-testid=search-button]').click();
 
     cy.wait(2000);
+    cy.url().should('be.eq', 'http://localhost:3000/?search=nonexistent+movie+title');
 
     cy.findAllByTestId('movie-tile').should('not.exist');
   });
