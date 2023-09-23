@@ -6,7 +6,7 @@ import { Container, Row, Modal, Button } from 'react-bootstrap';
 import AreaField from '../AreaField/AreaField';
 import SelectField from '../SelectField/SelectField';
 import TextField from '../TextField/TextField';
-import { MOCK_GENRES } from '../../mock/mockData.js';
+import { GENRES } from '../../constants/data.js';
 
 const DEFAULT_VALUES = {
   'title': '',
@@ -82,7 +82,7 @@ const MovieForm = ({ movie, onSubmit }) => {
                   name='genres'
                   label='Genre'
                   placeholder='Select Genre'
-                  options={MOCK_GENRES}
+                  options={GENRES}
                 />
                 <TextField
                   type='number'
@@ -116,16 +116,16 @@ const MovieForm = ({ movie, onSubmit }) => {
 
 MovieForm.propTypes = {
   movie: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    release_date: PropTypes.string,
-    poster_path: PropTypes.string,
-    vote_average: PropTypes.number,
-    genres: PropTypes.arrayOf(PropTypes.string),
-    runtime: PropTypes.number,
-    overview: PropTypes.string
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+    runtime: PropTypes.number.isRequired,
+    overview: PropTypes.string.isRequired
   }),
-  handleSubmit: PropTypes.func
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default MovieForm;

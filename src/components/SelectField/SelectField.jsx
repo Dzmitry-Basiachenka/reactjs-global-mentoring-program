@@ -28,10 +28,10 @@ const SelectField = ({
 }
 
 SelectField.propTypes = {
-    label: PropTypes.string,
-    name: PropTypes.string,
-    placeholder: PropTypes.string,
-    options: PropTypes.arrayOf(PropTypes.string)
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default SelectField;

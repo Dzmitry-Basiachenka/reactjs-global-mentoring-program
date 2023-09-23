@@ -1,5 +1,5 @@
-import SortControl from './SortControl.jsx';
-import { MOCK_SORT_OPTIONS } from '../../mock/mockData.js';
+import SortControl from './SortControl';
+import { SORT_OPTIONS } from '../../constants/data.js';
 
 export default {
   component: SortControl
@@ -7,9 +7,9 @@ export default {
 
 export const Default = {
   args: {
-    sortOptions: MOCK_SORT_OPTIONS,
-    defaultSortBy: MOCK_SORT_OPTIONS[1].value,
-    handleChange: event => console.log(`sort by: ${event.target.value}`),
+    sortOptions: SORT_OPTIONS,
+    defaultSort: SORT_OPTIONS[1].value,
+    handleChange: (event) => console.log(`sort by: ${event.target.value}`)
   },
   parameters: {
   }

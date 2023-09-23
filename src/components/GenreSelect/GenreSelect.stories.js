@@ -1,24 +1,15 @@
 import GenreSelect from './GenreSelect';
+import { GENRES } from '../../constants/data.js';
 
 export default {
   component: GenreSelect
 };
 
-export const AllUnchecked = {
+export const Default = {
   args: {
-    genres: ['Documentary', 'Comedy', 'Horror', 'Crime'],
+    genres: GENRES,
     selectedGenres: [],
-    onSelect: (genre, selection) => console.log(`genre: ${genre}, selection: ${selection}`),
-  },
-  parameters: {
-  }
-};
-
-export const AllChecked = {
-  args: {
-    genres: ['Documentary', 'Comedy', 'Horror', 'Crime'],
-    selectedGenres: ['Documentary', 'Comedy', 'Horror', 'Crime'],
-    onSelect: (genre, selection) => console.log(`genre: ${genre}, selection: ${selection}`),
+    onSelect: (genres) => console.log(`select genres: ${genres}`)
   },
   parameters: {
   }

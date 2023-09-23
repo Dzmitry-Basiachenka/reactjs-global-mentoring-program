@@ -1,5 +1,5 @@
-import MovieDetails from './MovieDetails.jsx';
-import { MOCK_MOVIES } from '../../mock/mockData.js';
+import MovieDetails from './MovieDetails';
+import { MOCK_MOVIES } from '../../constants/mockData.js';
 
 export default {
   component: MovieDetails
