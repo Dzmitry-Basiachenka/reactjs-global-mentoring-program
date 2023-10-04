@@ -24,10 +24,10 @@ const TextField = ({
 }
 
 TextField.propTypes = {
-    type: PropTypes.string,
-    label: PropTypes.string,
-    name: PropTypes.string,
-    placeholder: PropTypes.string
+    type: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired
 };
 
 export default TextField;

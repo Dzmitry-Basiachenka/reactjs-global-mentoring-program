@@ -1,5 +1,5 @@
 import EditMovie from './EditMovie';
-import { MOCK_MOVIES } from '../../mock/mockData.js';
+import { MOCK_MOVIES } from '../../constants/mockData.js';
 
 export default {
   component: EditMovie

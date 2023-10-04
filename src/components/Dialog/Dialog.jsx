@@ -22,12 +22,12 @@ function Dialog({ title, children, handleClose }) {
 }
 
 Dialog.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]),
-  handleClose: PropTypes.func
+    PropTypes.arrayOf(PropTypes.node).isRequired,
+    PropTypes.node.isRequired
+  ]).isRequired,
+  handleClose: PropTypes.func.isRequired
 };
 
 export default Dialog;

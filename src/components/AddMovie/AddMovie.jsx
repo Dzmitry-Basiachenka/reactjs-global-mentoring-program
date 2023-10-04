@@ -26,8 +26,8 @@ const AddMovie = ({ handleClose, handleSubmit }) => {
 }
 
 AddMovie.propTypes = {
-  handleClose: PropTypes.func,
-  handleSubmit: PropTypes.func
+  handleClose: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
 
 export default AddMovie;

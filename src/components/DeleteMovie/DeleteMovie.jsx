@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 
@@ -38,8 +37,8 @@ const DeleteMovie = ({ handleClose, handleDelete }) => {
 }
 
 DeleteMovie.propTypes = {
-  handleClose: PropTypes.func,
-  handleDelete: PropTypes.func
+  handleClose: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired
 };
 
 export default DeleteMovie;

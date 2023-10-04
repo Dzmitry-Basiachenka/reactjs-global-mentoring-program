@@ -28,17 +28,17 @@ const EditMovie = ({ movie, handleClose, handleSubmit }) => {
 
 EditMovie.propTypes = {
   movie: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    release_date: PropTypes.string,
-    poster_path: PropTypes.string,
-    vote_average: PropTypes.number,
-    genres: PropTypes.arrayOf(PropTypes.string),
-    runtime: PropTypes.number,
-    overview: PropTypes.string
-  }),
-  handleClose: PropTypes.func,
-  handleSubmit: PropTypes.func
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+    runtime: PropTypes.number.isRequired,
+    overview: PropTypes.string.isRequired
+  }).isRequired,
+  handleClose: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
 
 export default EditMovie;

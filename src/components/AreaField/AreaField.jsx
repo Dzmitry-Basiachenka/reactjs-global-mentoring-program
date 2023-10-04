@@ -23,9 +23,9 @@ const AreaField = ({
 }
 
 AreaField.propTypes = {
-    label: PropTypes.string,
-    name: PropTypes.string,
-    placeholder: PropTypes.string
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired
 };
 
 export default AreaField;
