@@ -1,7 +1,7 @@
-import AddMovie from './AddMovie';
+import AddMovieForm from './AddMovieForm';
 
 export default {
-  component: AddMovie
+  component: AddMovieForm
 };
 
 export const Default = {

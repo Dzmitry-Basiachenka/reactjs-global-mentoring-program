@@ -1,8 +1,8 @@
-import EditMovie from './EditMovie';
+import EditMovieForm from './EditMovieForm';
 import { MOCK_MOVIES } from '../../constants/mockData.js';
 
 export default {
-  component: EditMovie
+  component: EditMovieForm
 };
 
 export const Default = {

@@ -3,6 +3,7 @@
 exports[`MovieForm should match snapshot 1`] = `
 <form
   action="#"
+  data-testid="edit-movie-form"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
@@ -117,9 +118,6 @@ exports[`MovieForm should match snapshot 1`] = `
               ]
             }
           >
-            <option>
-              Select Genre
-            </option>
             <option
               value="Action"
             >

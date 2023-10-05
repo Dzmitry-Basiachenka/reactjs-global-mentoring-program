@@ -5,16 +5,14 @@ import Dialog from '../Dialog/Dialog';
 import MovieForm from '../MovieForm/MovieForm';
 import { movieType } from '../../constants/types.js';
 
-const EditMovie = ({ movie, handleClose, handleSubmit }) => {
-  const [visibleMovie, setVisibleMovie] = useState(null);
+const EditMovieForm = ({ movie, handleClose, handleSubmit }) => {
+  const [visibleMovie, setVisibleMovie] = useState(movie);
 
   return (
     <>
-      <button onClick={() => setVisibleMovie(movie)}>open edit movie dialog</button>
-
       {visibleMovie && (
         <Dialog
-          title={`Edit movie`}
+          title={'Edit movie'}
           handleClose={() => { handleClose(); setVisibleMovie(null); }}
         >
           <MovieForm
@@ -27,10 +25,10 @@ const EditMovie = ({ movie, handleClose, handleSubmit }) => {
   );
 }
 
-EditMovie.propTypes = {
+EditMovieForm.propTypes = {
   movie: movieType.isRequired,
   handleClose: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
 };
 
-export default EditMovie;
+export default EditMovieForm;

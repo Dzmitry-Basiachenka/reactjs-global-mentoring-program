@@ -40,8 +40,8 @@ const Home = () => {
     setFetching(true);
 
     MovieService.getMovies(getFilter(),
-      (data) => {
-        setMovies(data);
+      (response) => {
+        setMovies(response);
         setFetching(false);
       },
       (error) => {
