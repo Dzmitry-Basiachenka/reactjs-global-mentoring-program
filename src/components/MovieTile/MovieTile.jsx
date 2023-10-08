@@ -1,6 +1,8 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 import { getGenres, getYear } from '../../utils/utils.js';
+import { movieType } from '../../constants/types.js';
 import posterNotAvailable from '../../assets/images/poster-not-available.jpg';
 
 const MovieTile = ({ movie, handleClick }) => {
@@ -31,5 +33,10 @@ const MovieTile = ({ movie, handleClick }) => {
         </div>
     )
 }
+
+MovieTile.propTypes = {
+  movie: movieType.isRequired,
+  handleClick: PropTypes.func.isRequired
+};
 
 export default MovieTile;

@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 import MovieTile from '../../components/MovieTile/MovieTile';
 import styles from './styles.module.css';
 
-const MovieListPage = ({ movies, setSelectedMovie }) => {
+const MovieListPage = ({ movies }) => {
+    const [searchParams] = useSearchParams();
+    const navigate = useNavigate();
+
     return (
         <div className={styles.grid}>
             {movies &&
@@ -12,7 +16,7 @@ const MovieListPage = ({ movies, setSelectedMovie }) => {
                     <MovieTile
                         key={movie.id}
                         movie={movie}
-                        handleClick={setSelectedMovie}
+                        handleClick={() => navigate({ pathname: `/${movie.id}`, search: `?${createSearchParams(searchParams)}` })}
                     />
                 ))}
         </div>

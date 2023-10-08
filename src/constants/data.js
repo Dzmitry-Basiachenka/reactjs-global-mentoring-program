@@ -24,3 +24,7 @@ export const SORT_OPTIONS = [
 export const DEFAULT_SEARCH = '';
 export const DEFAULT_GENRES = [];
 export const DEFAULT_SORT = SORT_OPTIONS[0].value;
+
+export const SEARCH_QUERY_PARAM = 'search';
+export const GENRES_QUERY_PARAM = 'genres';
+export const SORT_QUERY_PARAM = 'sort';
