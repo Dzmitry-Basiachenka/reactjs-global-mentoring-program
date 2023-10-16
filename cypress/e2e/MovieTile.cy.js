@@ -19,7 +19,7 @@ describe('MovieTile', () => {
     cy.get('button[data-testid=search-button]').click();
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/?search=eleven');
+    cy.url().should('be.eq', 'http://localhost:3000/?search=eleven&sort=title');
 
     cy.findAllByTestId('movie-tile').its('length').should('be.eq', 1);
 
@@ -30,7 +30,7 @@ describe('MovieTile', () => {
     cy.get('button[data-testid=search-button]').click();
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/?search=nonexistent+movie+title');
+    cy.url().should('be.eq', 'http://localhost:3000/?search=nonexistent+movie+title&sort=title');
 
     cy.findAllByTestId('movie-tile').should('not.exist');
   });

@@ -29,7 +29,7 @@ describe('AddMovieForm', () => {
     // enter new movie data
     const title = 'test ' + new Date().valueOf();
     const releaseDate = '2001-01-01';
-    const posterPath = 'http://poster';
+    const posterPath = 'https://image.tmdb.org/1.jpg';
     const voteAverage = '10';
     const runtime = '100';
     const overview = 'something';

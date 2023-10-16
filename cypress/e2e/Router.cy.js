@@ -81,7 +81,7 @@ describe('Router', () => {
     cy.findByTestId('close-movie-details').click();
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/');
+    cy.url().should('be.eq', 'http://localhost:3000/?sort=title');
   });
 
   it('navigates by all sort params and selects/deselects movie details', () => {

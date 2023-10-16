@@ -50,7 +50,7 @@ describe('GenreSelect', () => {
     cy.findAllByTestId('genre-select-checkbox').eq(0).should('be.checked');
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/?genres=Action');
+    cy.url().should('be.eq', 'http://localhost:3000/?genres=Action&sort=title');
 
     cy.findAllByTestId('movie-tile').eq(0).findByTestId('movie-tile-title').should('have.text', '\'71');
     cy.findAllByTestId('movie-tile').eq(1).findByTestId('movie-tile-title').should('have.text', '10,000 BC');
@@ -66,7 +66,7 @@ describe('GenreSelect', () => {
     cy.findAllByTestId('genre-select-checkbox').eq(1).should('be.checked');
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/?genres=Adventure');
+    cy.url().should('be.eq', 'http://localhost:3000/?genres=Adventure&sort=title');
 
     cy.findAllByTestId('movie-tile').eq(0).findByTestId('movie-tile-title').should('have.text', '10,000 BC');
     cy.findAllByTestId('movie-tile').eq(1).findByTestId('movie-tile-title').should('have.text', '127 Hours');
@@ -85,7 +85,7 @@ describe('GenreSelect', () => {
     cy.findAllByTestId('genre-select-checkbox').eq(1).should('be.checked');
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/?genres=Action%2CAdventure');
+    cy.url().should('be.eq', 'http://localhost:3000/?genres=Action&genres=Adventure&sort=title');
 
     cy.findAllByTestId('movie-tile').eq(0).findByTestId('movie-tile-title').should('have.text', '10,000 BC');
     cy.findAllByTestId('movie-tile').eq(1).findByTestId('movie-tile-title').should('have.text', '13 Assassins');

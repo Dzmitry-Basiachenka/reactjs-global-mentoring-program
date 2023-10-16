@@ -5,9 +5,9 @@ describe('EditMovieForm', () => {
   })
 
   it('validates route', () => {
-    cy.visit('/11472/edit')
+    cy.visit('/edit/11472')
 
-    cy.url().should('be.eq', 'http://localhost:3000/11472/edit');
+    cy.url().should('be.eq', 'http://localhost:3000/edit/11472');
 
     cy.findByTestId('edit-movie-form').should('be.visible');
   });
@@ -21,7 +21,7 @@ describe('EditMovieForm', () => {
     // enter new movie data
     const title1 = 'test ' + new Date().valueOf();
     const releaseDate1 = '2001-01-01';
-    const posterPath1 = 'http://poster';
+    const posterPath1 = 'https://image.tmdb.org/1.jpg';
     const voteAverage1 = '10';
     const runtime1 = '100';
     const overview1 = 'something';
@@ -75,7 +75,7 @@ describe('EditMovieForm', () => {
     // enter edit movie data
     const title2 = 'test ' + new Date().valueOf();
     const releaseDate2 = '2002-02-02';
-    const posterPath2 = 'https://poster';
+    const posterPath2 = 'https://image.tmdb.org/2.jpg';
     const voteAverage2 = '1';
     const runtime2 = '200';
     const overview2 = 'anything';

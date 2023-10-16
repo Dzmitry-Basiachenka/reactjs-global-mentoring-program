@@ -17,14 +17,14 @@ describe('SearchForm', () => {
     cy.get('button[data-testid=search-button]').click();
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/?search=eleven');
+    cy.url().should('be.eq', 'http://localhost:3000/?search=eleven&sort=title');
 
     cy.get('[data-testid=movie-counter]').contains('1 movie found').should('exist');
     cy.findAllByTestId('movie-tile').first().findByTestId('movie-tile-title').should('have.text', 'Ocean\'s Eleven');
   });
 
   it('navigates by route', () => {
-    cy.visit('/?search=twelve')
+    cy.visit('/?search=twelve&sort=title')
     cy.wait(2000);
 
     cy.get('input[data-testid=search-input]').should('have.value', 'twelve');

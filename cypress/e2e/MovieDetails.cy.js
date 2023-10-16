@@ -13,7 +13,7 @@ describe('MovieDetails', () => {
     cy.findAllByTestId('movie-tile').first().click();
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/8388');
+    cy.url().should('be.eq', 'http://localhost:3000/8388?sort=title');
 
     cy.findByTestId('search-form').should('not.exist');
     cy.findByTestId('movie-details').should('be.visible');
@@ -28,7 +28,7 @@ describe('MovieDetails', () => {
     cy.findByTestId('close-movie-details').click();
 
     cy.wait(2000);
-    cy.url().should('be.eq', 'http://localhost:3000/');
+    cy.url().should('be.eq', 'http://localhost:3000/?sort=title');
 
     cy.findByTestId('search-form').should('be.visible');
     cy.findByTestId('movie-details').should('not.exist');
