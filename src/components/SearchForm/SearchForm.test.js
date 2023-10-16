@@ -17,6 +17,7 @@ describe('SearchForm', () => {
           initialSearchText='comedy'
           placeholderText='What do you want to watch?'
           buttonText='Search'
+          handleSearch={console.log}
         />
       )
       .toJSON();
@@ -31,6 +32,7 @@ describe('SearchForm', () => {
         initialSearchText='comedy'
         placeholderText='What do you want to watch?'
         buttonText='Search'
+        handleSearch={console.log}
       />
     );
 

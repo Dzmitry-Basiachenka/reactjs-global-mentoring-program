@@ -4,16 +4,14 @@ import { PropTypes } from 'prop-types';
 import Dialog from '../Dialog/Dialog';
 import MovieForm from '../MovieForm/MovieForm';
 
-const AddMovie = ({ handleClose, handleSubmit }) => {
-  const [visible, setVisible] = useState(null);
+const AddMovieForm = ({ handleClose, handleSubmit }) => {
+  const [visible, setVisible] = useState(true);
 
   return (
     <>
-      <button onClick={() => setVisible(true)}>open add movie dialog</button>
-
       {visible && (
         <Dialog
-          title={`Add movie`}
+          title={'Add movie'}
           handleClose={() => { handleClose(); setVisible(null); }}
         >
           <MovieForm
@@ -25,9 +23,9 @@ const AddMovie = ({ handleClose, handleSubmit }) => {
   );
 }
 
-AddMovie.propTypes = {
+AddMovieForm.propTypes = {
   handleClose: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
 };
 
-export default AddMovie;
+export default AddMovieForm;

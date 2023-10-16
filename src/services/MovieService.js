@@ -30,6 +30,34 @@ export const MovieService = {
 
     return await fetch(url)
       .then(response => response.json());
-  }
+  },
+
+  addMovie: async (movie) => {
+    const url = `${BACKEND_URL}`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(movie)
+    });
+
+    return response.json();
+  },
+
+  editMovie: async (movie) => {
+    const url = `${BACKEND_URL}`;
+
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(movie)
+    });
+
+    return response.json();
+  },
 
 }

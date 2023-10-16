@@ -8,46 +8,21 @@ import SelectField from '../SelectField/SelectField';
 import TextField from '../TextField/TextField';
 import { GENRES } from '../../constants/data.js';
 import { movieType } from '../../constants/types.js';
-
-const DEFAULT_VALUES = {
-  'title': '',
-  'release_date': '',
-  'poster_path': '',
-  'vote_average': '',
-  'genres': [],
-  'runtime': '',
-  'overview': ''
-};
+import { INITIAL_VALUES, validator } from './validator.js';
 
 const MovieForm = ({ movie, onSubmit }) => {
-  const initialValues = movie || DEFAULT_VALUES;
-
-  const validator = values => {
-    const errors = {};
-
-    for (const property in values) {
-      const value = values[property];
-      if (!value) {
-        errors[property] = 'Required';
-      }
-    }
-
-    return errors;
-  };
-
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={movie || INITIAL_VALUES}
       validate={validator}
       onSubmit={(values, { setSubmitting }) => {
-        console.log('form submitting: ' + JSON.stringify(values))
         onSubmit(values);
       }}
     >
       {({
         isSubmitting
       }) => (
-        <Form noValidate>
+        <Form data-testid={`${movie ? 'edit-movie-form' : 'add-movie-form'}`} noValidate>
           <Modal.Body>
             <Container>
               <Row>
@@ -82,7 +57,6 @@ const MovieForm = ({ movie, onSubmit }) => {
                 <SelectField
                   name='genres'
                   label='Genre'
-                  placeholder='Select Genre'
                   options={GENRES}
                 />
                 <TextField

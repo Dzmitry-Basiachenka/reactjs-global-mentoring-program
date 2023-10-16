@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import { cleanup, render, screen } from '@testing-library/react'
 
 import MovieTile from './MovieTile';
@@ -12,9 +13,12 @@ describe('MovieTile', () => {
   it('should match snapshot', () => {
     const movieTile = renderer
       .create(
-        <MovieTile
-          movie={MOCK_MOVIES[0]}
-        />
+        <MemoryRouter>
+          <MovieTile
+            movie={MOCK_MOVIES[0]}
+            handleClick={console.log}
+          />
+        </MemoryRouter>
       )
       .toJSON();
 
@@ -25,9 +29,12 @@ describe('MovieTile', () => {
     const movie = MOCK_MOVIES[0];
 
     render(
-      <MovieTile
-        movie={movie}
-      />
+      <MemoryRouter>
+        <MovieTile
+          movie={movie}
+          handleClick={console.log}
+        />
+      </MemoryRouter>
     );
 
     const image = screen.getByTestId('movie-tile-poster');
