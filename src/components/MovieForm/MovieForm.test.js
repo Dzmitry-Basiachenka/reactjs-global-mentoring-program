@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { cleanup, render, screen, act, fireEvent } from '@testing-library/react';
 
 import MovieForm from './MovieForm';
 import { MOCK_MOVIES } from '../../constants/mockData.js';

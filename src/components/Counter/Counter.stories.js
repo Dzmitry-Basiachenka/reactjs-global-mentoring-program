@@ -13,7 +13,7 @@ export const Default = {
 
 export const WithInitialValue = {
   args: {
-    initialValue: '1',
+    initialValue: '1'
   },
   parameters: {
   }

@@ -7,7 +7,7 @@ class GenreSelect extends React.Component {
     super(props);
     this.state = {
       selectedGenres: this.props.selectedGenres
-    }
+    };
   }
 
   render() {
@@ -33,10 +33,10 @@ class GenreSelect extends React.Component {
             >
               {genre}
             </label>
-          </div>
+          </div>;
         })
       }
-    </fieldset>
+    </fieldset>;
   }
 
   handleClick = (event) => {
@@ -46,15 +46,15 @@ class GenreSelect extends React.Component {
     if (selectedGenres.includes(selectedGenre)) {
       selectedGenres.splice(selectedGenres.indexOf(selectedGenre), 1);
 
-      this.setState(prevState => ({ ...prevState, selectedGenres: selectedGenres }));
+      this.setState(prevState => ({ ...prevState, selectedGenres }));
       this.props.onSelect(selectedGenres);
     } else {
       selectedGenres.push(selectedGenre);
 
-      this.setState(prevState => ({ ...prevState, selectedGenres: selectedGenres }));
-      this.props.onSelect(selectedGenres)
+      this.setState(prevState => ({ ...prevState, selectedGenres }));
+      this.props.onSelect(selectedGenres);
     }
-  }
+  };
 
 }
 

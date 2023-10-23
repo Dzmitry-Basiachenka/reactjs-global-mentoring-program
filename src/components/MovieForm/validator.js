@@ -1,13 +1,13 @@
 import { isNotEmpty, isValidDate, isValidURL } from '../../utils/validators.js';
 
 export const INITIAL_VALUES = {
-  'title': '',
-  'release_date': '',
-  'poster_path': '',
-  'vote_average': '',
-  'genres': [],
-  'runtime': '',
-  'overview': ''
+  title: '',
+  release_date: '',
+  poster_path: '',
+  vote_average: '',
+  genres: [],
+  runtime: '',
+  overview: ''
 };
 
 export const validator = values => {

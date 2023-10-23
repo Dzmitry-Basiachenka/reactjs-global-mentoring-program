@@ -7,7 +7,7 @@ export default {
 
 export const Default = {
   args: {
-    movie: MOCK_MOVIES[0],
+    movie: MOCK_MOVIES[0]
   },
   parameters: {
   }

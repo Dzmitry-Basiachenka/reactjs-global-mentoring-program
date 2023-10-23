@@ -58,6 +58,6 @@ export const MovieService = {
     });
 
     return response.json();
-  },
+  }
 
-}
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react';
 
 import MovieTile from './MovieTile';
 import { MOCK_MOVIES } from '../../constants/mockData.js';

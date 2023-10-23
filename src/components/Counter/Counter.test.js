@@ -16,33 +16,33 @@ describe('Counter', () => {
     expect(counter).toMatchSnapshot();
   });
 
-  //Test that component renders initial value provided in props
+  // Test that component renders initial value provided in props
   it('should render initial value', () => {
     render(<Counter initialValue='1' />);
 
-    const text = screen.getByTestId('counter-text')
+    const text = screen.getByTestId('counter-text');
     expect(text.innerHTML).toBe('1');
   });
 
-  //Test that a click event on "decrement" button decrements the displayed value
+  // Test that a click event on "decrement" button decrements the displayed value
   it('should decrement the value', () => {
     render(<Counter initialValue='1' />);
 
     const decrementButton = screen.getByTestId('counter-decrement');
     fireEvent.click(decrementButton);
 
-    const text = screen.getByTestId('counter-text')
+    const text = screen.getByTestId('counter-text');
     expect(text.innerHTML).toBe('0');
   });
 
-  //Test that a click event on "increment" button increments the displayed value
+  // Test that a click event on "increment" button increments the displayed value
   it('should increment the value', () => {
     render(<Counter initialValue='1' />);
 
     const incrementButton = screen.getByTestId('counter-increment');
     fireEvent.click(incrementButton);
 
-    const text = screen.getByTestId('counter-text')
+    const text = screen.getByTestId('counter-text');
     expect(text.innerHTML).toBe('2');
   });
 

@@ -9,7 +9,7 @@ export const Default = {
     initialSearchText: 'comedy',
     placeholderText: 'What do you want to watch?',
     buttonText: 'Search',
-    handleSearch: (search) => console.log(`search: ${search}`),
+    handleSearch: (search) => console.log(`search: ${search}`)
   },
   parameters: {
   }

@@ -42,24 +42,24 @@ class SearchForm extends React.Component {
           </button>
         </div>
       </div>
-    </div>
+    </div>;
   }
 
   handleInputChange = (event) => {
     this.setState({
       searchText: event.target.value
     });
-  }
+  };
 
   handleInputKeyDown = (event) => {
     if (event.keyCode === KEY_ENTER_CODE) {
       this.props.handleSearch(this.state.searchText);
     }
-  }
+  };
 
   handleButtonClick = () => {
     this.props.handleSearch(this.state.searchText);
-  }
+  };
 
 }
 

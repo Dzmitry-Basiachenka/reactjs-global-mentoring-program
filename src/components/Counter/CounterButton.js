@@ -9,6 +9,6 @@ const CounterButton = (text, testId, handleClick) => {
     },
     text
   );
-}
+};
 
 export default CounterButton;

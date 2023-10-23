@@ -6,6 +6,6 @@ export const CounterContainer = (children) => {
     {},
     ...children
   );
-}
+};
 
 export default CounterContainer;
